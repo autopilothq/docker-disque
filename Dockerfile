@@ -25,9 +25,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gcc libc6-dev make tcl && \
 	rm -rf /var/lib/apt/lists/* && \
 # Obtain disque sources
-	mkdir -p /disque && \
-	curl -sSL https://github.com/antirez/disque/archive/${version}.tar.gz | tar -xvz && \
-	cd /disque-${version} && \
+	git clone https://github.com/antirez/disque.git && \
+	cd disque && \
+	git checkout 0192ba7e1cda157024229962b7bee1c6e86d771b && \
 # Make disque
 	make install && \
 	make test && \
