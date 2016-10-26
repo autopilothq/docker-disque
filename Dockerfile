@@ -22,7 +22,7 @@ RUN curl -o /usr/local/bin/gosu -fSL "https://github.com/tianon/gosu/releases/do
 
 # Add build-time dependencies to remove later
 RUN apt-get update && apt-get install -y --no-install-recommends \
-		gcc libc6-dev make tcl && \
+		gcc libc6-dev make tcl git && \
 	rm -rf /var/lib/apt/lists/* && \
 # Obtain disque sources
 	git clone https://github.com/antirez/disque.git && \
